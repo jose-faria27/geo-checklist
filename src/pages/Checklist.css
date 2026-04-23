@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary: #e41e26;
+  --primary-color: #e41e26;
+  --bg: #fafafa;
+  --card-bg: #fff;
+  --muted: #8b8b8b;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+body.dark-theme {
+  --bg: #121212;
+  --card-bg: #1e1e1e;
+  --muted: #cfcfcf;
+}
+
+.checklist-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: #222;
+  font-family: "Poppins", sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ---------------------- HEADER ---------------------- */
+.ch-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 25px 50px;
+  flex-wrap: wrap;
+}
+
+.ch-left {
+  flex: 0 0 auto;
+}
+
+.ch-logo {
+  width: 90px;
+  height: auto;
+  object-fit: contain;
+  margin-top: -5px;
+  transition: filter 0.3s ease;
+}
+
+body.dark-theme .ch-logo {
+  filter: brightness(1.1);
+}
+
+.ch-center {
+  flex: 1;
+  text-align: center;
+  margin-top: -10px;
+}
+
+.ch-center h1 {
+  font-size: 50px;
+  margin: 0;
+  font-weight: 700;
+  color: #e41e26;
+}
+
+.task-number {
+  margin-top: 10px;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.task-number .number {
+  color: var(--primary);
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+.choose {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.ch-right {
+  flex: 0 0 auto;
+  margin-top: -8px;
+}
+
+/* ---------------------- TEMA (Sol e Lua minimalistas) ---------------------- */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.icon {
+  font-size: 1.4rem;
+  color: #9a9a9a;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.icon:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+/* ---------------------- MAIN ---------------------- */
+.ch-main {
+  padding: 28px 72px 80px;
+}
+
+.cards-grid {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 30px;
+}
+
+/* ---------------------- CARD ---------------------- */
+.card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: #e41e26;
+  box-shadow: 0 8px 20px rgba(228, 30, 38, 0.1);
+  margin-bottom: 18px;
+}
+
+.card-body h3 {
+  font-size: 18px;
+  color: #111;
+  font-weight: 700;
+  margin: 0;
+}
+
+.card-body .desc {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* ---------------------- DARK MODE ---------------------- */
+body.dark-theme .card-body h3 {
+  color: #fff;
+}
+
+body.dark-theme .card {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .ch-center h1 {
+  color: #fff;
+}
+
+/* ---------------------- RESPONSIVIDADE ---------------------- */
+@media (max-width: 1200px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .ch-header {
+    padding: 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ch-center h1 {
+    font-size: 38px;
+  }
+
+  .ch-main {
+    padding: 20px 24px 60px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.edit-task {
+  background: none;
+  border: none;
+  margin-left: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+  padding: 2px;
+}
+
+.edit-task svg {
+  font-size: 18px;
+}
+
+.edit-task:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+}

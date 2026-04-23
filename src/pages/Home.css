@@ -1,0 +1,165 @@
+/* Importa a fonte Poppins igual à do modelo */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #e41e26;
+  --text-color: #5a5a5a;
+  --text-color-input: #5a5a5a
+  --bg-color: #fafafa;
+  --white: #ffffff;
+}
+
+body.dark-theme {
+  --bg-color: #1c1c1c;
+  --text-color: #dddddd;
+  --text-color-input: #5a5a5a;
+  --white: #2a2a2a;
+}
+
+.home-container {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  transition: 0.3s ease;
+}
+
+/* ---------------------- HEADER ---------------------- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 50px;
+}
+
+.logo {
+  width: 90px;
+  height: auto;
+  transition: filter 0.3s ease;
+}
+
+body.dark-theme .logo {
+  filter: brightness(1.1);
+}
+
+
+/* ---------------------- TEMA (Sol e Lua minimalistas) ---------------------- */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.icon {
+  font-size: 1.9rem;
+  color: #9a9a9a; /* cinza suave padrão */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.icon:hover {
+  color: var(--primary-color); /* muda pra vermelho */
+  transform: scale(1.1);
+}
+
+/* ---------------------- CHECK ICON ---------------------- */
+.check-icon-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.check-icon {
+  width: 80px;
+  height: 80px;
+}
+
+/* ---------------------- MAIN ---------------------- */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.title {
+  color: var(--primary-color);
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  max-width: 620px;
+  font-weight: 400;
+}
+
+/* Caixa de input */
+.input-box {
+  background: var(--white);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  width: 480px;
+  text-align: left;
+  transition: 0.3s;
+}
+
+.input-box label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.input-box input {
+  margin-top: 10px;
+  width: 94%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color-input);
+}
+
+.input-box input:focus {
+  outline: 1px solid var(--primary-color);
+}
+
+.error {
+  color: #e41e26;
+  margin-top: 5px;
+  font-size: 0.85rem;
+}
+
+/* Botão continuar */
+.continue-btn {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 80px;
+  margin-top: 35px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(228, 30, 38, 0.3);
+  transition: 0.2s;
+  font-family: "Poppins", sans-serif;
+  width: 600px;
+}
+
+.continue-btn:hover {
+  transform: scale(1.01);
+}
+
+.continue-btn span {
+  margin-left: 8px;
+}
